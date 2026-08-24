@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mickle — Delete Your Data</title>
+<style>
+  :root {
+    --bg: #0E1210;
+    --surface: #161C19;
+    --border: #2B3531;
+    --text: #EDF1EF;
+    --muted: #A9B3AE;
+    --gloss: #6B7671;
+    --green: #87c14d;
+    --teal: #2fd4a7;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 24px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(14,18,16,0.92);
+    backdrop-filter: blur(6px);
+  }
+  header .mark { width: 34px; height: 34px; }
+  header .word { font-size: 19px; font-weight: 700; letter-spacing: -0.2px; }
+  header nav { margin-left: auto; font-size: 14px; }
+  header nav a { color: var(--muted); text-decoration: none; margin-left: 18px; }
+  header nav a:hover { color: var(--text); }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .banner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; margin: 0 0 8px; }
+  h2 {
+    font-size: 18px; font-weight: 700; color: var(--text);
+    margin: 40px 0 12px; padding-top: 8px; border-top: 1px solid var(--border);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  p, li { font-size: 15px; color: var(--muted); }
+  p { margin: 0 0 14px; }
+  strong { color: var(--text); font-weight: 600; }
+  a { color: var(--green); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ol, ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  footer {
+    max-width: 680px; margin: 0 auto; padding: 0 24px 60px;
+    font-size: 13px; color: var(--gloss);
+  }
+</style>
+</head>
+<body>
+<header>
+  <svg class="mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 40 156 L 76 60 L 100 100 L 126 42 L 160 156" fill="none" stroke="#87c14d" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="126" cy="42" r="15" fill="#2fd4a7"/>
+  </svg>
+  <span class="word">Mickle</span>
+  <nav>
+    <a href="./privacy.html">Privacy</a>
+    <a href="./terms.html">Terms</a>
+    <a href="./delete-account.html">Delete Account</a>
+    <a href="./clear-data.html">Delete Data</a>
+  </nav>
+</header>
+<main>
+<h1>Delete Your Data</h1>
+<div class="banner"><p>This page describes how to delete some or all of your logged data in Mickle without deleting your account. Last updated: 21 Aug 2026.</p></div>
+
+<h2>Clear one month</h2>
+<ol>
+<li>Open Mickle and go to the <strong>Months</strong> tab</li>
+<li>Open the month you want to clear</li>
+<li>Tap the trash icon on that month's page and confirm</li>
+</ol>
+<p>This removes only that month's transactions. Your account, categories, and budget targets are untouched.</p>
+
+<h2>Clear everything</h2>
+<ol>
+<li>Open Mickle and go to <strong>Settings → Clear Data</strong></li>
+<li>Choose <strong>Clear all transactions</strong> and confirm</li>
+</ol>
+<p>This removes every transaction you've logged. Your account, categories, and budget targets are kept exactly as they were — this does not delete your account. If you want your account and everything tied to it removed instead, see <a href="./delete-account.html">Delete Your Account</a>.</p>
+
+<h2>What's kept vs. removed</h2>
+<ul>
+<li><strong>Removed:</strong> the transactions covered by whichever option you choose (one month, or all of them).</li>
+<li><strong>Kept:</strong> your account, sign-in, categories, and budget targets.</li>
+</ul>
+<p><strong>Nothing is retained.</strong> Cleared transactions are removed at the database level immediately and cannot be recovered. If you want a copy first, use <strong>Settings → Export your data</strong> before clearing.</p>
+
+<h2>Contact</h2>
+<p>Questions about this process: <strong>ceo@diveriontech.com</strong></p>
+</main>
+<footer>
+  Mickle is built and operated by Ishan Savio Kerketta, trading as Diveriontech. Questions: <a href="mailto:ceo@diveriontech.com">ceo@diveriontech.com</a>.
+</footer>
+</body>
+</html>

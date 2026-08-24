@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mickle</title>
+<meta name="robots" content="noindex">
+<style>
+  /*
+    Mickle confirmation page.
+
+    Standalone on purpose: no framework, no fonts to fetch, no analytics. It has
+    to render instantly on a bad connection, because it is the first thing a new
+    user ever sees from us and it appears at the moment they are least invested.
+
+    Colours match src/theme/index.ts. If those change, change these.
+  */
+  :root {
+    --bg: #0E1210;
+    --surface: #161C19;
+    --border: #2B3531;
+    --text: #EDF1EF;
+    --muted: #8D9793;
+    --gloss: #6B7671;
+    --green: #87c14d;
+    --gold: #e8b93b;
+    --maroon: #c96a6a;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    line-height: 1.5;
+  }
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    padding: 32px 28px 28px;
+  }
+  .mark {
+    width: 52px; height: 52px;
+    border-radius: 18px;
+    background: var(--green);
+    color: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 800;
+    margin-bottom: 24px;
+  }
+  .icon { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+  h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.4px; margin: 0 0 8px; }
+  p  { font-size: 15px; color: var(--muted); margin: 0 0 16px; }
+  .gloss { font-size: 12px; color: var(--gloss); margin-top: 20px; }
+  a.button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: var(--green);
+    color: var(--bg);
+    font-size: 17px; font-weight: 600;
+    padding: 15px;
+    border-radius: 18px;
+    margin-top: 24px;
+  }
+  a.button.quiet {
+    background: transparent;
+    color: var(--green);
+    border: 1px solid var(--border);
+  }
+  .ok      h1 { color: var(--text); }
+  .warn    .icon { color: var(--gold); }
+  .problem .icon { color: var(--maroon); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+  <main class="card" id="card">
+    <div class="mark">M</div>
+    <div class="icon" id="icon">·</div>
+    <h1 id="title">Checking…</h1>
+    <p id="body">One moment.</p>
+    <a class="button" id="action" href="monetra://" hidden>Open Mickle</a>
+    <p class="gloss" id="gloss" hidden></p>
+  </main>
+
+<script>
+(function () {
+  // Supabase returns success in the URL fragment (#access_token=…&type=signup)
+  // and failures in either the fragment or the query string, depending on the
+  // flow. Read both rather than guessing which one this is.
+  var hash  = new URLSearchParams(location.hash.replace(/^#/, ''));
+  var query = new URLSearchParams(location.search);
+  function param(name) { return hash.get(name) || query.get(name); }
+
+  var accessToken = hash.get('access_token');
+  var error       = param('error');
+  var errorCode   = param('error_code');
+  var errorText   = (param('error_description') || '').toLowerCase();
+  var type        = param('type');
+
+  // Strip the tokens out of the address bar immediately. They are real
+  // credentials, and leaving them in the URL means they end up in history, in
+  // any screenshot, and in whatever the browser syncs.
+  if (location.hash || location.search) {
+    history.replaceState(null, '', location.pathname);
+  }
+
+  var states = {
+    confirmed: {
+      tone: 'ok', icon: '✓',
+      title: 'Email confirmed',
+      body: 'Your Mickle account is ready. Head back to the app and sign in.',
+      action: 'Open Mickle',
+      gloss: 'If the button does nothing, just close this tab and open Mickle yourself — you are confirmed either way.'
+    },
+    recovered: {
+      tone: 'ok', icon: '✓',
+      title: 'Link verified',
+      body: 'Open Mickle to set your new password.',
+      action: 'Open Mickle',
+      gloss: 'If the button does nothing, close this tab and open Mickle yourself.'
+    },
+    already: {
+      tone: 'ok', icon: '✓',
+      title: 'Already confirmed',
+      body: 'This email was confirmed before, so there is nothing left to do. Sign in and carry on.',
+      action: 'Open Mickle',
+      gloss: 'Confirmation links only work once, which is why a second tap lands here.'
+    },
+    expired: {
+      tone: 'warn', icon: '⏱',
+      title: 'This link has expired',
+      body: 'Confirmation links last about an hour. Open Mickle, try to sign in, and we will send you a fresh one.',
+      action: 'Open Mickle',
+      gloss: 'Nothing is wrong with your account — the link just timed out.'
+    },
+    invalid: {
+      tone: 'problem', icon: '!',
+      title: 'This link did not work',
+      body: 'It may have been cut in half by your email app, or a newer email may have replaced it. Open Mickle and request a new one.',
+      action: 'Open Mickle',
+      gloss: 'Copying the whole link into your browser address bar sometimes fixes it, if you still have the email.'
+    },
+    nothing: {
+      tone: 'ok', icon: '·',
+      title: 'Nothing to confirm',
+      body: 'This page is where confirmation links land. You have arrived without one, which is harmless.',
+      action: 'Open Mickle',
+      gloss: null
+    }
+  };
+
+  var state;
+  if (accessToken && type === 'recovery')      state = states.recovered;
+  else if (accessToken)                         state = states.confirmed;
+  else if (errorText.indexOf('already') !== -1) state = states.already;
+  else if (errorCode === 'otp_expired' || errorText.indexOf('expired') !== -1) state = states.expired;
+  else if (error)                               state = states.invalid;
+  else                                          state = states.nothing;
+
+  document.getElementById('card').className  = 'card ' + state.tone;
+  document.getElementById('icon').textContent  = state.icon;
+  document.getElementById('title').textContent = state.title;
+  document.getElementById('body').textContent  = state.body;
+
+  var action = document.getElementById('action');
+  action.textContent = state.action;
+  action.hidden = false;
+
+  var gloss = document.getElementById('gloss');
+  if (state.gloss) { gloss.textContent = state.gloss; gloss.hidden = false; }
+
+  document.title = 'Mickle — ' + state.title;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mickle — Terms of Service</title>
+<style>
+  /*
+    Matches web/confirm/index.html's palette (src/theme/index.ts) and the
+    app icon's mark, so this reads as the same product, not a bolted-on
+    legal page. Standalone: no framework, no external fonts, no analytics.
+  */
+  :root {
+    --bg: #0E1210;
+    --surface: #161C19;
+    --border: #2B3531;
+    --text: #EDF1EF;
+    --muted: #A9B3AE;
+    --gloss: #6B7671;
+    --green: #87c14d;
+    --teal: #2fd4a7;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 24px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(14,18,16,0.92);
+    backdrop-filter: blur(6px);
+  }
+  header .mark { width: 34px; height: 34px; }
+  header .word { font-size: 19px; font-weight: 700; letter-spacing: -0.2px; }
+  header nav { margin-left: auto; font-size: 14px; }
+  header nav a { color: var(--muted); text-decoration: none; margin-left: 18px; }
+  header nav a:hover { color: var(--text); }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .banner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+  .banner strong { color: var(--text); }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; margin: 0 0 8px; }
+  h2 {
+    font-size: 18px; font-weight: 700; color: var(--text);
+    margin: 40px 0 12px; padding-top: 8px; border-top: 1px solid var(--border);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  p, li { font-size: 15px; color: var(--muted); }
+  p { margin: 0 0 14px; }
+  strong { color: var(--text); font-weight: 600; }
+  em { color: var(--gloss); font-style: italic; }
+  a { color: var(--green); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  code {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; padding: 1px 6px; font-size: 13px;
+  }
+  blockquote {
+    margin: 0 0 14px; padding: 2px 0 2px 14px;
+    border-left: 2px solid var(--border); color: var(--gloss);
+  }
+  footer {
+    max-width: 680px; margin: 0 auto; padding: 0 24px 60px;
+    font-size: 13px; color: var(--gloss);
+  }
+</style>
+</head>
+<body>
+<header>
+  <svg class="mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 40 156 L 76 60 L 100 100 L 126 42 L 160 156" fill="none" stroke="#87c14d" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="126" cy="42" r="15" fill="#2fd4a7"/>
+  </svg>
+  <span class="word">Mickle</span>
+  <nav>
+    <a href="./privacy.html">Privacy</a>
+    <a href="./terms.html">Terms</a>
+  <a href="./delete-account.html">Delete Account</a>
+  <a href="./clear-data.html">Delete Data</a>
+  </nav>
+</header>
+<main>
+<h1>Terms of Service</h1>
+<div class="banner"><p><strong>Not legal advice; reviewed and approved for publishing by the operator on 19 Aug 2026</strong>, not a lawyer. Most of this document is standard, low-risk language used by small apps everywhere. The two sections that carry real personal risk — Limitation of Liability and Governing Law, since Mickle is currently operated by an individual rather than a registered company — were reviewed and accepted as drafted, at the operator's own informed discretion, rather than sent to a lawyer.  <strong>Forward note:</strong> the operator plans to register a company, Diverion, as the parent entity for all Mickle business. When that happens, Section 1 (who you're agreeing with), the personal-liability framing in Section 7, and this banner all need updating to name Diverion instead of an individual — flagged here so it isn't missed when the time comes.  Last updated: 19 Aug 2026. Effective: 19 Aug 2026.</p></div>
+<h2>1. Who you're agreeing with</h2>
+<p>These terms are an agreement between you and <strong>Ishan Savio Kerketta</strong>, operating
+personally under the trading name <strong>Diveriontech</strong> (diveriontech.com) —
+not a registered company as of this writing. Stated plainly here for the
+same reason it's stated plainly in the Privacy Policy: implying a corporate
+structure that doesn't exist would misrepresent who you're actually dealing
+with.</p>
+<p>By creating a Mickle account, you agree to these terms. If you don't agree
+to them, don't create an account.</p>
+<h2>2. What Mickle is — and isn't</h2>
+<p>Mickle is a personal finance <em>tracker</em>. It records what you tell it and
+shows you your own numbers back. It is <strong>not</strong>:</p>
+<ul>
+<li>a bank, a payment processor, or a money transmitter — Mickle never
+  moves, holds, or has access to your actual money, only the records you
+  choose to enter about it;</li>
+<li>financial, tax, investment, or legal advice — the numbers, budgets, and
+  insights Mickle shows are based only on what you've entered and are not
+  a recommendation about what to do with your money;</li>
+<li>connected to your bank, card, or any financial institution — every figure
+  in Mickle is manually entered by you unless a future version explicitly
+  says otherwise.</li>
+</ul>
+<h2>3. Your account</h2>
+<ul>
+<li>You need to provide a real, working email address to sign up and confirm
+  it, and are responsible for keeping your account credentials and your
+  device itself secure — Mickle's App Lock feature (Settings → Security)
+  is available for this and is worth turning on.</li>
+<li>One account per person. Don't share your login.</li>
+<li>You're responsible for the accuracy of what you enter — Mickle can only
+  show you honest numbers if the numbers going in are honest.</li>
+</ul>
+<h2>4. Your data</h2>
+<p>Full detail is in the <a href="./privacy.html">Privacy Policy</a>; the
+commitment that matters most is repeated here as an actual term of this
+agreement, not just a policy statement:</p>
+<p><strong>Mickle will not sell your personal data, and will not share it with
+third parties for their own marketing, advertising, or commercial
+purposes.</strong> You can export a full copy of your data or permanently delete
+your account and everything in it, at any time, from Settings.</p>
+<h2>5. Acceptable use</h2>
+<p>Don't use Mickle to:</p>
+<ul>
+<li>attempt to access another user's data, or attempt to bypass or test the
+  app's security controls except through the disclosure process below;</li>
+<li>reverse-engineer, scrape, or automate access to the service in a way that
+  disrupts it for others;</li>
+<li>use the service for anything illegal.</li>
+</ul>
+<p>If you find a genuine security issue, please report it to
+<strong>ceo@diveriontech.com</strong> before disclosing it publicly — that's the
+difference between helping and causing harm, and it's appreciated.</p>
+<h2>6. No warranty</h2>
+<p>Mickle is provided "as is." It's actively maintained, but there's no
+guarantee it will be available every moment, free of bugs, or perfectly
+accurate — you're encouraged to independently verify anything you rely on
+for a real financial decision, the same way you'd double-check any tool
+before trusting it with something that matters.</p>
+<h2>7. Limitation of liability</h2>
+<p><em>Because Mickle isn't operated through a registered company, there's no
+corporate shield between "Mickle is liable" and "Ishan is personally
+liable" — they're currently the same thing. The language below is
+standard, conservative boilerplate used by small consumer apps generally,
+capping exposure to things within actual control (see the earlier
+conversation about the no-sell/no-share promise being safe to make
+strongly, versus open-ended guarantees about things outside anyone's
+control). Reviewed and accepted as drafted on 19 Aug 2026 — the operator
+has confirmed this matches how much personal risk he's willing to carry
+for now, with a company (Diverion) planned as the eventual liability
+shield instead.</em></p>
+<p>To the fullest extent permitted by law: Mickle and its operator are not
+liable for indirect, incidental, or consequential damages arising from your
+use of the service, including financial decisions made based on information
+in the app. Mickle's total liability for any claim arising from the
+service is limited to the amount you've paid to use it in the twelve months
+before the claim (which, for a free app, is zero) — except where such a
+limitation isn't permitted by applicable law, or for the one thing this
+limitation deliberately does <em>not</em> cover: a breach of the no-sell/no-share
+data commitment in Section 4, which is the one promise here made without
+this cap, because it's the one promise fully within the operator's own
+control to keep.</p>
+<h2>8. Ending your account</h2>
+<p>You can delete your account at any time from Settings — this is immediate,
+permanent, and removes everything, as described in the Privacy Policy. The
+operator may suspend or terminate an account that violates Section 5, with
+notice where practical.</p>
+<h2>9. Changes</h2>
+<p>The service and these terms may change over time. Material changes to
+these terms will be reflected here with an updated date, and — for
+anything that meaningfully changes what you agreed to — you'll be told
+inside the app rather than left to notice a footer date changing.</p>
+<h2>10. Governing law</h2>
+<p><em>Drafted assuming India, since that's where the operator and the primary
+audience are based. Confirmed and accepted on 19 Aug 2026.</em></p>
+<p>These terms are governed by the laws of India, without regard to conflict
+of law principles.</p>
+<h2>11. Contact</h2>
+<p><strong>ceo@diveriontech.com</strong></p>
+</main>
+<footer>
+  Mickle is built and operated by Ishan Savio Kerketta, trading as Diveriontech. Questions: <a href="mailto:ceo@diveriontech.com">ceo@diveriontech.com</a>.
+</footer>
+</body>
+</html>

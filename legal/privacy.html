@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mickle — Privacy Policy</title>
+<style>
+  /*
+    Matches web/confirm/index.html's palette (src/theme/index.ts) and the
+    app icon's mark, so this reads as the same product, not a bolted-on
+    legal page. Standalone: no framework, no external fonts, no analytics.
+  */
+  :root {
+    --bg: #0E1210;
+    --surface: #161C19;
+    --border: #2B3531;
+    --text: #EDF1EF;
+    --muted: #A9B3AE;
+    --gloss: #6B7671;
+    --green: #87c14d;
+    --teal: #2fd4a7;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 24px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(14,18,16,0.92);
+    backdrop-filter: blur(6px);
+  }
+  header .mark { width: 34px; height: 34px; }
+  header .word { font-size: 19px; font-weight: 700; letter-spacing: -0.2px; }
+  header nav { margin-left: auto; font-size: 14px; }
+  header nav a { color: var(--muted); text-decoration: none; margin-left: 18px; }
+  header nav a:hover { color: var(--text); }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .banner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+  .banner strong { color: var(--text); }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; margin: 0 0 8px; }
+  h2 {
+    font-size: 18px; font-weight: 700; color: var(--text);
+    margin: 40px 0 12px; padding-top: 8px; border-top: 1px solid var(--border);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  p, li { font-size: 15px; color: var(--muted); }
+  p { margin: 0 0 14px; }
+  strong { color: var(--text); font-weight: 600; }
+  em { color: var(--gloss); font-style: italic; }
+  a { color: var(--green); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  code {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; padding: 1px 6px; font-size: 13px;
+  }
+  blockquote {
+    margin: 0 0 14px; padding: 2px 0 2px 14px;
+    border-left: 2px solid var(--border); color: var(--gloss);
+  }
+  footer {
+    max-width: 680px; margin: 0 auto; padding: 0 24px 60px;
+    font-size: 13px; color: var(--gloss);
+  }
+</style>
+</head>
+<body>
+<header>
+  <svg class="mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 40 156 L 76 60 L 100 100 L 126 42 L 160 156" fill="none" stroke="#87c14d" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="126" cy="42" r="15" fill="#2fd4a7"/>
+  </svg>
+  <span class="word">Mickle</span>
+  <nav>
+    <a href="./privacy.html">Privacy</a>
+    <a href="./terms.html">Terms</a>
+  <a href="./delete-account.html">Delete Account</a>
+  <a href="./clear-data.html">Delete Data</a>
+  </nav>
+</header>
+<main>
+<h1>Privacy Policy</h1>
+<div class="banner"><p><strong>Not legal advice; reviewed and approved for publishing by the operator on 19 Aug 2026</strong>, not a lawyer. The factual claims here (what's collected, what's never shared, how deletion works) are checked against the actual code and are accurate as of that date.  <strong>Forward note:</strong> the operator plans to register a company, Diverion, as the parent entity for all Mickle business. When that happens, the "Who operates Mickle" section below needs updating to name Diverion instead of an individual — flagged here so it isn't missed when the time comes.  Last updated: 19 Aug 2026. Effective: 19 Aug 2026.</p></div>
+<h2>The short version</h2>
+<p>Mickle is a personal finance tracker. You give it your email and whatever
+you choose to log — amounts, categories, notes. It uses that to show your
+own numbers back to you, and for nothing else. It is never sold. It is never
+shared with third parties for their own use. You can take a full copy of it
+whenever you want, and you can delete all of it, permanently, whenever you
+want. The rest of this document is the detail behind that summary.</p>
+<h2>Who operates Mickle</h2>
+<p>Mickle is built and operated by <strong>Ishan Savio Kerketta</strong>, trading as <strong>Diveriontech</strong>
+(diveriontech.com). This is not, as of this writing, a registered company —
+it's operated by an individual. That's stated here plainly because a privacy
+policy that implied a corporate structure that doesn't exist would be
+exactly the kind of technically-true-but-misleading statement this document
+is trying to avoid making anywhere else in it.</p>
+<p>Contact: <strong>ceo@diveriontech.com</strong></p>
+<h2>What Mickle collects</h2>
+<ul>
+<li><strong>Your email address</strong>, to create and secure your account.</li>
+<li><strong>The financial information you choose to enter</strong> — transaction amounts,
+  categories and items, notes, budgets, currency, and any recurring rules
+  you set up. All of it is typed in by you. Mickle does not read your SMS
+  messages, notifications, bank accounts, or any other source on your phone
+  — everything in the app is there because you put it there.</li>
+<li><strong>Basic account preferences</strong> — display name, base currency, and the
+  display settings you choose in Settings (date format, whether App Lock is
+  on, and so on).</li>
+</ul>
+<p>Mickle does not collect location data, contacts, photos, or anything else
+your phone's permissions aren't explicitly asked for — and as of this
+writing, the app requests no device permissions beyond what App Lock needs
+to check for a fingerprint, Face ID, or device passcode, which happens
+entirely on your phone and is never sent anywhere.</p>
+<h2>Why it's collected</h2>
+<p>To run the app for you, full stop. Your transactions are used to compute
+your own monthly totals, budget progress, and insights — the numbers you
+see are your numbers, calculated from what you entered, for you to look at.
+Your email exists only to identify your account and to send you
+account-related email (confirming sign-up, and nothing else at this time).</p>
+<h2>Who can see it</h2>
+<p>This is the part most privacy policies gloss over, and it's worth being
+exact about instead.</p>
+<p>Mickle is built on Supabase, a hosted database service. Two separate things
+protect your data there:</p>
+<ul>
+<li><strong>From other users:</strong> row-level security rules, enforced by the database
+  itself, mean another Mickle account can never read, edit, or delete your
+  data — not through the app, and not even if someone tried to query the
+  database directly with a modified version of the app. This has been
+  independently tested against the live system, not just written in code
+  and assumed to work.</li>
+<li><strong>From the operator:</strong> as the person who administers the database, Ishan
+  has the <em>technical ability</em> to access account data — this is true of
+  essentially every app built this way, including most of the finance and
+  budgeting apps you've probably used before. <strong>That access is not used to
+  view, browse, or analyze anyone's financial details</strong>, and exists only as
+  a consequence of running the service (for example, to investigate a bug
+  someone reports, or to fulfill a legal request Mickle is required to
+  comply with). It is never used to build a profile of you, and your data
+  is never looked at out of curiosity.</li>
+</ul>
+<p>Data at rest in Mickle's database is encrypted (AES-256, provided by
+Supabase's infrastructure) and every connection between the app and the
+database is encrypted in transit (TLS/HTTPS). This protects your data from
+anyone intercepting it over the network or accessing the underlying storage
+without authorization — it does not, and no honest privacy policy should
+claim it does, prevent the operator described above from being able to
+access the data as part of operating the service.</p>
+<h2>What Mickle never does</h2>
+<ul>
+<li><strong>Never sells your data.</strong> Not in aggregate, not anonymized, not ever.</li>
+<li><strong>Never shares it with third parties</strong> for their marketing, advertising,
+  or any other purpose of their own.</li>
+<li><strong>No advertising.</strong> There are no ad networks, ad SDKs, or ad-targeting
+  integrations anywhere in the app.</li>
+<li><strong>No analytics or tracking SDKs.</strong> Mickle does not send your usage or
+  your data to any third-party analytics service.</li>
+<li><strong>No data brokers.</strong> Nobody outside of running Mickle itself ever
+  receives your information.</li>
+</ul>
+<p>The only outside service Mickle relies on is Supabase (to store your data)
+and, for account-related email, a transactional email provider (Resend) —
+both process data solely to provide those specific services to Mickle, not
+for their own purposes, and neither receives more than what's needed to do
+that job.</p>
+<h2>Your control over your data</h2>
+<ul>
+<li><strong>Export.</strong> Settings → Export your data gives you a full copy of
+  everything Mickle holds about you — as a complete backup (JSON) or as a
+  spreadsheet-readable list of your transactions (CSV) — at any time, with
+  no waiting period.</li>
+<li><strong>Delete.</strong> Settings → Delete account permanently removes your account
+  and everything tied to it — every transaction, category, budget, and
+  recurring rule — in one action. This is enforced at the database level
+  (not just hidden from view), takes effect immediately, and cannot be
+  undone. Deleting your account is also how you exercise a right to erasure
+  under most privacy laws, including India's Digital Personal Data
+  Protection Act.</li>
+<li><strong>Nothing is kept "just in case."</strong> Once your account is deleted, the
+  data is gone from Mickle's database — there is no separate retained copy
+  kept for analytics, backups beyond routine infrastructure backups that
+  age out on their own schedule, or any other purpose.</li>
+</ul>
+<h2>Children</h2>
+<p>Mickle is not directed at, and is not knowingly used to collect data from,
+children. If you believe a child's account or data has ended up in Mickle,
+contact the address below and it will be removed.</p>
+<h2>Changes to this policy</h2>
+<p>If this policy changes in a way that matters — what's collected, who it's
+shared with, how long it's kept — that change will be reflected here with
+an updated date, and, for a material change, you'll be told about it inside
+the app rather than left to notice a footer date changing.</p>
+<h2>Contact</h2>
+<p>Questions, data requests, or concerns about how Mickle handles your
+information: <strong>ceo@diveriontech.com</strong></p>
+</main>
+<footer>
+  Mickle is built and operated by Ishan Savio Kerketta, trading as Diveriontech. Questions: <a href="mailto:ceo@diveriontech.com">ceo@diveriontech.com</a>.
+</footer>
+</body>
+</html>
