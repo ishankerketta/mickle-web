@@ -108,114 +108,284 @@
 <!--
   MAINTAINER NOTE — deliberately an HTML comment, not page copy.
 
-  These are notes to whoever maintains this document. They were previously
-  printed in the banner at the top of the page, where users read them: a
-  to-do item, an announcement of unformed corporate plans, and a volunteered
-  statement that no lawyer had reviewed the text. None of that is a user's
-  business, and the last one only plants doubt about a document whose whole
-  job is to be trusted.
+  Version history of this document:
+    19 Aug 2026 — first version, written by the operator.
+    24 Aug 2026 — app renamed Monetra to Mickle. No term changed.
+    28 Aug 2026 — this version. Rewritten after a legal consultation.
 
-  Still true, still needs doing:
+  What changed on 28 Aug 2026, and why:
 
-  - No company is registered yet. If Diverion (or whatever the entity ends up
-    being called) is incorporated, "Who operates Mickle" here — and in
-    terms.html: section 1, the personal-liability framing in section 7 — must
-    be updated to name the entity instead of an individual.
-  - The factual claims on this page (what is collected, what is never shared,
-    how deletion works) were checked against the code on 19 Aug 2026. Re-check
-    them whenever data handling changes, not on a calendar.
-  - Terms sections 7 (Limitation of Liability) and 10 (Governing Law) carry
-    real personal exposure while this is operated by an individual. They were
-    accepted as drafted on 19 Aug 2026 at the operator's own discretion. Worth
-    an actual lawyer before the app leaves closed testing.
+  - Added clauses that were simply missing: eligibility and age (3),
+    ownership and licence (7), third-party infrastructure (9), indemnity
+    (11), and — in section 14 — severability, no waiver, entire agreement
+    with non-reliance, assignment, notices, survival, and force majeure.
+  - The liability cap in section 10 now applies to everything. The previous
+    version carved the no-sell/no-share data promise out of the cap, i.e.
+    accepted unlimited personal liability for it. The promise itself is
+    unchanged and still binding (section 5); it is simply now subject to the
+    same cap as every other obligation.
+  - No-warranty language (8) strengthened and made conspicuous.
+  - Termination rights (12) broadened beyond acceptable-use breaches.
+  - Section 15 now names a court (Kolkata) and adds a thirty-day
+    raise-it-first step before proceedings. Arbitration deliberately not
+    included — a sole arbitrator costs more than any claim against a free
+    app is worth.
+  - Electronic-record recital added to section 1.
+
+  Counsel's advice this version is built on: liability exposure is the same
+  for an individual and a registered sole proprietorship, so incorporation
+  is optional at this stage; a standard, conservative set of terms is
+  adequate protection; DPDP obligations are already met; the terms should be
+  drafted to protect the operator as an individual; governing law India,
+  with a named court for convenience.
+
+  STILL OPEN — put to counsel, not yet answered. This version was published
+  before her vetting, on the operator's decision, on the basis that it is
+  strictly more protective than the version it replaced. Revise on her word:
+
+  - VENUE. Section 15 names Kolkata. An exclusive jurisdiction clause can
+    generally only select among courts that already have jurisdiction, and
+    cannot create it. The operator resides and works in Assam (Gauhati High
+    Court). If a Kolkata clause will not hold on those facts, change the
+    city — it is a one-word edit.
+  - Whether the nil cap in section 10 should carry a small nominal floor
+    instead, since courts can be reluctant to enforce a total exclusion.
+  - Whether the mandatory-consumer-protection sentence at the end of section
+    15 should stay. It states the legal position accurately either way.
+  - Whether 18 is the right minimum age (section 3) rather than 13. It was
+    set at 18 to stay clear of the DPDP Act's verifiable parental consent
+    machinery for under-18s.
+  - RETENTION ON DELETION. Account deletion in the app is immediate, total
+    and irreversible, and these terms say so. Comparable Indian operators
+    reserve a right to retain limited records despite a deletion request,
+    for legal, audit and fraud-prevention purposes. Deliberately not added:
+    it would contradict a promise already made to users, and would need a
+    code change to be true. But it means no records survive to defend a
+    later claim.
+  - GRIEVANCE TIMELINES. The Privacy Policy commits to a 72-hour
+    acknowledgement and a 7-working-day resolution — tighter than comparable
+    operators with actual staff. Sustainable at 12 testers; possibly not at
+    scale. Left unchanged pending advice on the statutory floor.
+  - A short contractual limitation period (claims to be brought within, say,
+    3 months) was deliberately NOT included, on the view that section 28 of
+    the Indian Contract Act and the Limitation Act, 1963 would likely void
+    it. Add one only if that view is wrong.
+
+  - No company is registered. If Diverion is incorporated, section 1 here,
+    the assignment clause in section 14, and "Who operates Mickle" in
+    privacy.html must be updated to name the entity.
 -->
-<div class="banner"><p><strong>Last updated: 24 Aug 2026.</strong> Effective 19 Aug 2026. The only change since then is the app's name: it was called Monetra until 24 Aug 2026. No term of this agreement has changed.</p></div>
+<div class="banner"><p><strong>Last updated: 28 Aug 2026.</strong> Effective 28 Aug 2026. This version replaces the terms dated 19 Aug 2026. It adds several standard clauses that were previously missing, and changes how liability is limited — sections 10 and 11 are worth reading in full.</p></div>
 <h2>1. Who you're agreeing with</h2>
-<p>These terms are an agreement between you and <strong>Ishan Savio Kerketta</strong>, operating
-personally under the trading name <strong>Diveriontech</strong> (diveriontech.com) —
-not a registered company as of this writing. Stated plainly here for the
-same reason it's stated plainly in the Privacy Policy: implying a corporate
-structure that doesn't exist would misrepresent who you're actually dealing
-with.</p>
-<p>By creating a Mickle account, you agree to these terms. If you don't agree
-to them, don't create an account.</p>
+<p>These terms are an agreement between you and <strong>Ishan Savio Kerketta</strong>,
+operating personally under the trading name <strong>Diveriontech</strong>
+(diveriontech.com). Mickle is not currently operated through a registered
+company. That is stated plainly here, and in the Privacy Policy, so you know
+exactly who you are dealing with.</p>
+<p>In these terms, "the operator" means Ishan Savio Kerketta. By creating a
+Mickle account, you agree to these terms. If you don't agree to them, don't
+create an account.</p>
+<p>These terms form an electronic record under the Information Technology Act,
+2000. They take effect when you create your account, and need no physical or
+digital signature to bind either of us.</p>
+
 <h2>2. What Mickle is — and isn't</h2>
-<p>Mickle is a personal finance <em>tracker</em>. It records what you tell it and
-shows you your own numbers back. It is <strong>not</strong>:</p>
+<p>Mickle is a personal finance tracker. It records what you tell it and shows
+you your own numbers back. It is <strong>not</strong>:</p>
 <ul>
-<li>a bank, a payment processor, or a money transmitter — Mickle never
-  moves, holds, or has access to your actual money, only the records you
-  choose to enter about it;</li>
-<li>financial, tax, investment, or legal advice — the numbers, budgets, and
-  insights Mickle shows are based only on what you've entered and are not
-  a recommendation about what to do with your money;</li>
-<li>connected to your bank, card, or any financial institution — every figure
-  in Mickle is manually entered by you unless a future version explicitly
-  says otherwise.</li>
+  <li>a bank, a payment processor, or a money transmitter — Mickle never moves,
+  holds, or has access to your actual money, only the records you choose to
+  enter about it;</li>
+  <li>financial, tax, investment, or legal advice — the numbers, budgets, and
+  insights Mickle shows are based only on what you've entered, and are not a
+  recommendation about what to do with your money;</li>
+  <li>connected to your bank, card, or any financial institution — every figure
+  in Mickle is manually entered by you unless a future version explicitly says
+  otherwise.</li>
 </ul>
-<h2>3. Your account</h2>
+<p>Any decision you make about your money is your own. Mickle is a record, not
+an adviser.</p>
+
+<h2>3. Who can use Mickle</h2>
+<p>You must be <strong>at least 18 years old</strong> to create a Mickle account.
+Mickle is not directed at children and accounts are not knowingly provided to
+anyone under 18. If you believe an account has been created by someone under
+18, write to <strong>support@diveriontech.com</strong> and it will be removed.</p>
+<p>You may not use Mickle if you are barred from receiving the service under
+any law that applies to you, or if your account was previously terminated for
+breach of these terms.</p>
+
+<h2>4. Your account</h2>
 <ul>
-<li>You need to provide a real, working email address to sign up and confirm
-  it, and are responsible for keeping your account credentials and your
-  device itself secure — Mickle's App Lock feature (Settings → Security)
-  is available for this and is worth turning on.</li>
-<li>One account per person. Don't share your login.</li>
-<li>You're responsible for the accuracy of what you enter — Mickle can only
+  <li>You need to provide a real, working email address to sign up and confirm
+  it, and you are responsible for keeping your account credentials and your
+  device secure — Mickle's App Lock feature (Settings &rarr; Security) is
+  available for this and is worth turning on.</li>
+  <li>One account per person. Don't share your login.</li>
+  <li>You're responsible for the accuracy of what you enter — Mickle can only
   show you honest numbers if the numbers going in are honest.</li>
+  <li>You are responsible for activity that happens under your account.</li>
 </ul>
-<h2>4. Your data</h2>
+
+<h2>5. Your data</h2>
 <p>Full detail is in the <a href="./privacy.html">Privacy Policy</a>; the
 commitment that matters most is repeated here as an actual term of this
 agreement, not just a policy statement:</p>
-<p><strong>Mickle will not sell your personal data, and will not share it with
-third parties for their own marketing, advertising, or commercial
-purposes.</strong> You can export a full copy of your data or permanently delete
-your account and everything in it, at any time, from Settings.</p>
-<h2>5. Acceptable use</h2>
+<blockquote>Mickle will not sell your personal data, and will not share it with
+third parties for their own marketing, advertising, or commercial purposes.
+You can export a full copy of your data, or permanently delete your account
+and everything in it, at any time, from Settings.</blockquote>
+<p>That commitment is binding. Like every other obligation in these terms, a
+claim arising from it is subject to section 10.</p>
+
+<h2>6. Acceptable use</h2>
 <p>Don't use Mickle to:</p>
 <ul>
-<li>attempt to access another user's data, or attempt to bypass or test the
+  <li>attempt to access another user's data, or attempt to bypass or test the
   app's security controls except through the disclosure process below;</li>
-<li>reverse-engineer, scrape, or automate access to the service in a way that
-  disrupts it for others;</li>
-<li>use the service for anything illegal.</li>
+  <li>reverse-engineer, decompile, scrape, or automate access to the service in
+  a way that disrupts it for others or places unreasonable load on it;</li>
+  <li>resell, sublicense, or commercially exploit the service;</li>
+  <li>use the service for anything illegal, fraudulent, or intended to harm
+  another person.</li>
 </ul>
 <p>If you find a genuine security issue, please report it to
-<strong>security@diveriontech.com</strong> before disclosing it publicly — that's the
-difference between helping and causing harm, and it's appreciated.</p>
-<h2>6. No warranty</h2>
-<p>Mickle is provided "as is." It's actively maintained, but there's no
-guarantee it will be available every moment, free of bugs, or perfectly
-accurate — you're encouraged to independently verify anything you rely on
-for a real financial decision, the same way you'd double-check any tool
+<strong>security@diveriontech.com</strong> before disclosing it publicly — that's
+the difference between helping and causing harm, and it's appreciated.</p>
+
+<h2>7. Ownership and your licence to use Mickle</h2>
+<p>Mickle — the application, its source code, its design, its name and its logo
+- belongs to the operator. You are granted a personal, non-exclusive,
+non-transferable, revocable licence to use Mickle for your own personal
+finance tracking for as long as these terms are in force. Nothing here
+transfers ownership of the app to you.</p>
+<p><strong>Your records remain yours.</strong> The operator does not claim
+ownership of the financial data you enter, and uses it only as the Privacy
+Policy describes.</p>
+
+<h2>8. No warranty</h2>
+<p>Mickle is provided <strong>"as is" and "as available."</strong> It is actively
+maintained, but you are encouraged to independently verify anything you rely
+on for a real financial decision, the same way you'd double-check any tool
 before trusting it with something that matters.</p>
-<h2>7. Limitation of liability</h2>
-<p>To the fullest extent permitted by law: Mickle and its operator are not
-liable for indirect, incidental, or consequential damages arising from your
-use of the service, including financial decisions made based on information
-in the app. Mickle's total liability for any claim arising from the
-service is limited to the amount you've paid to use it in the twelve months
-before the claim (which, for a free app, is zero) — except where such a
-limitation isn't permitted by applicable law, or for the one thing this
-limitation deliberately does <em>not</em> cover: a breach of the no-sell/no-share
-data commitment in Section 4, which is the one promise here made without
-this cap, because it's the one promise fully within the operator's own
-control to keep.</p>
-<h2>8. Ending your account</h2>
+<p>TO THE FULLEST EXTENT PERMITTED BY LAW, THE OPERATOR DISCLAIMS ALL
+WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING ANY
+IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+ACCURACY, OR NON-INFRINGEMENT. THE OPERATOR DOES NOT WARRANT THAT THE SERVICE
+WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE, OR THAT ANY FIGURE IT
+DISPLAYS OR CALCULATES WILL BE ACCURATE OR COMPLETE.</p>
+
+<h2>9. Services Mickle depends on</h2>
+<p>Mickle runs on infrastructure operated by third parties — including its
+database and authentication provider, its email provider, and the app store
+through which you installed it. The operator chooses these providers with
+care but does not control them.</p>
+<p>To the fullest extent permitted by law, the operator is not liable for loss,
+downtime, corruption of data, or unauthorised access to data that is caused by
+a failure, outage, or security incident at one of those providers rather than
+by the operator's own act or omission. Where such an incident affects your
+data, the operator will tell you what happened and will meet its obligations
+under applicable data protection law.</p>
+
+<h2>10. Limitation of liability</h2>
+<p>TO THE FULLEST EXTENT PERMITTED BY LAW:</p>
+<ul>
+  <li>The operator is <strong>not liable for any indirect, incidental,
+  consequential, special, exemplary or punitive damages</strong> of any kind,
+  including loss of profits, loss of savings, loss of data, business
+  interruption, or financial loss arising from decisions you make based on
+  information shown in the app — whether or not the operator was advised that
+  such loss was possible.</li>
+  <li>The operator's <strong>total aggregate liability</strong> for all claims
+  arising out of or relating to Mickle is limited to the total amount you have
+  paid to use it in the twelve months before the claim arose. Mickle is
+  currently free of charge, and that amount is accordingly nil.</li>
+</ul>
+<p>Nothing in these terms excludes or limits liability that cannot lawfully be
+excluded or limited — including liability for fraud, or for death or personal
+injury caused by negligence. If any part of this section is held
+unenforceable, the rest of it continues to apply and the unenforceable part is
+limited to the minimum extent necessary.</p>
+
+<h2>11. Indemnity</h2>
+<p>You agree to indemnify the operator against any third-party claim, demand,
+loss, liability or reasonable cost (including reasonable legal fees) arising
+out of your use of Mickle, anything you enter into it, your breach of these
+terms, or your violation of any law or of another person's rights.</p>
+<p>This does not apply to any claim arising from the operator's own breach of
+these terms, or to anything the law does not permit to be indemnified.</p>
+
+<h2>12. Ending your account</h2>
 <p>You can delete your account at any time from Settings — this is immediate,
-permanent, and removes everything, as described in the Privacy Policy. The
-operator may suspend or terminate an account that violates Section 5, with
-notice where practical.</p>
-<h2>9. Changes</h2>
-<p>The service and these terms may change over time. Material changes to
-these terms will be reflected here with an updated date, and — for
-anything that meaningfully changes what you agreed to — you'll be told
-inside the app rather than left to notice a footer date changing.</p>
-<h2>10. Governing law</h2>
-<p>These terms are governed by the laws of India, without regard to conflict
-of law principles.</p>
-<h2>11. Contact</h2>
-<p><strong>support@diveriontech.com</strong></p>
+permanent, and removes everything, as described in the Privacy Policy.</p>
+<p>The operator may suspend or terminate your access to Mickle if you breach
+these terms, if required by law, or if continuing to provide the service to
+you would create a genuine legal or security risk. Notice will be given where
+practical.</p>
+<p>The operator may also discontinue Mickle entirely. If that happens,
+reasonable advance notice will be given inside the app so that you can export
+your data first.</p>
+
+<h2>13. Changes to these terms</h2>
+<p>The service and these terms may change over time. Material changes will be
+reflected here with an updated date, and — for anything that meaningfully
+changes what you agreed to — reasonable efforts will be made to tell you
+inside the app rather than leaving you to notice a footer date changing.
+Continuing to use Mickle after a change takes effect means you accept it.</p>
+
+<h2>14. General</h2>
+<p><strong>Severability.</strong> If any provision of these terms is held invalid
+or unenforceable, it will be limited or removed to the minimum extent
+necessary, and the remaining provisions stay in full force.</p>
+<p><strong>No waiver.</strong> A failure or delay in enforcing any part of these
+terms is not a waiver of the right to enforce it later.</p>
+<p><strong>Entire agreement.</strong> These terms, together with the Privacy
+Policy, form the entire agreement between you and the operator about Mickle,
+and replace any earlier understanding on the same subject. You are agreeing on
+the basis of what these two documents say — not on the basis of anything said
+anywhere else, whether in a store listing, a screenshot, a post, or a
+conversation.</p>
+<p><strong>Assignment.</strong> You may not transfer your rights under these terms.
+The operator may transfer them — including to a company later formed to
+operate Mickle — on notice inside the app or by email. Your rights under these
+terms will not be reduced by such a transfer.</p>
+<p><strong>Notices.</strong> The operator may contact you at the email address on
+your account, and a message sent there counts as delivered to you. Keep that
+address current and reachable. You can reach the operator at the addresses in
+section 16.</p>
+<p><strong>What survives.</strong> Closing your account, or these terms otherwise
+coming to an end, does not switch off the parts of this agreement meant to
+outlast it. Sections 7, 8, 9, 10, 11 and 15 continue to apply to anything that
+happened while your account existed, as does any other section that by its
+nature is meant to survive.</p>
+<p><strong>Events outside reasonable control.</strong> The operator is not liable
+for any failure or delay caused by something outside reasonable control. That
+includes hosting, infrastructure, network or power failure; hacking,
+unauthorised access to systems, or a security breach that reasonable
+commercial measures would not have prevented; malicious code; act of
+government; and natural disaster.</p>
+
+<h2>15. Governing law, disputes and jurisdiction</h2>
+<p>These terms, and any dispute arising out of or in connection with them or
+with your use of Mickle, are governed by the laws of India, without regard to
+conflict of law principles.</p>
+<p><strong>Please raise it first.</strong> If something goes wrong, write to the
+operator at the addresses in section 16, setting out the problem and what you
+would like done about it. Both sides agree to try in good faith to resolve it
+that way for <strong>thirty days</strong> before starting any proceedings. This
+costs nothing and settles most things.</p>
+<p>The courts at <strong>Kolkata</strong> shall have exclusive jurisdiction over any
+such dispute, and you and the operator each submit to that jurisdiction.</p>
+<p>Where the law of the country you live in gives you consumer protections that
+cannot be set aside by agreement, nothing in this section removes those
+protections.</p>
+
+<h2>16. Contact</h2>
+<p>General questions and support: <strong>support@diveriontech.com</strong></p>
+<p>Security issues: <strong>security@diveriontech.com</strong></p>
+<p>Data protection questions and grievances under the DPDP Act: the grievance
+officer named in the <a href="./privacy.html">Privacy Policy</a>, at
+<strong>grievance@diveriontech.com</strong></p>
 </main>
 <footer>
   Mickle is built and operated by Ishan Savio Kerketta, trading as Diveriontech. Questions: <a href="mailto:support@diveriontech.com">support@diveriontech.com</a>.
